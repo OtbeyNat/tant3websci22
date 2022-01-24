@@ -39,7 +39,9 @@ function output(api) {
         }
 
         var icon = JSON.stringify(data.weather[0].icon).substr(1).slice(0,-1);
-        $("#wimg").attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
+        var imglink = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        $("#wimg").attr("src", imglink);
+        document.body.style.backgroundImage = "url(" + imglink + ")";
         var wind = parseInt(JSON.stringify(data.wind.speed));
         var windout = JSON.stringify(data.wind.speed) + " mph<br>";
         if (wind <= 10) {windout += "calm winds";}
