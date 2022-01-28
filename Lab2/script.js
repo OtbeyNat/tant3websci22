@@ -26,18 +26,6 @@ function output(api) {
         document.getElementById("weather").innerHTML = JSON.stringify(data.weather[0].description).substr(1).slice(0,-1);
         document.getElementById("temp").innerHTML = "Temp: " + JSON.stringify(data.main.temp) + " F";
         document.getElementById("feels").innerHTML = "Feels Like: " + JSON.stringify(data.main.feels_like) + " F";
-        
-        var feel = parseInt(JSON.stringify(data.main.feels_like));
-        if (feel <= 32) {
-            //freezing
-        }
-        else if (feel <= 65) {
-            //chilly
-        }
-        else{
-            //warm
-        }
-
         var icon = JSON.stringify(data.weather[0].icon).substr(1).slice(0,-1);
         var imglink = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
         $("#wimg").attr("src", imglink);
