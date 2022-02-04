@@ -1,0 +1,102 @@
+body {font: 14px Helvetica, Arial; 
+    height:100vh; 
+    width:100vw; 
+    resize: both; 
+    background-image: url(grassbackground.png); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#pokedex {
+    z-index: 1;
+    width: 60%;
+    height: 85vh;
+    top: 1;
+}
+
+#content,#info {
+    position: absolute;
+    top: 20vh;
+    text-align: center;
+    width: 55%;
+    left: 22.5%;
+    height: 55%;
+}
+#info {
+    display:none;
+}
+
+#pokesubmit {
+    border: none;
+    background-image: url(pokeball.png);
+}
+
+#pokeball {
+    width: 25%;
+    top: 80%;
+    position: relative;
+    transition: 0.5s;
+}
+
+#pokeball:hover {
+    width: 30%;
+    cursor: pointer;
+}
+#reset button{
+    border: red solid 1px;
+    background-color: rgb(218, 218, 218);
+    border-radius: 5%;
+    transition: .5s;
+    width: 10%;
+}
+
+#reset button:hover{
+    background-color: rgb(214, 202, 202);
+    cursor: pointer;
+    width: 15%;
+}
+
+#enter,#pokeform {
+    height: 100%;
+}
+
+#user,#verb {
+    background-color: rgb(184, 235, 255);
+    border: skyblue 1px solid;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+    #pokedex {
+        width: 35%;
+    }
+    #pokeball {
+        width: 22%;
+        transition: .5s;
+        top: 50%;
+    }
+    #pokeball:hover {
+        width: 25%;
+        cursor: pointer;
+    }
+    #content,#info {
+        position: absolute;
+        width: 32%;
+        left: 34%;    
+    }
+    #info {
+        display: none;
+    }
+    #enter,#pokeform {
+        height: 100%;
+    }
+}

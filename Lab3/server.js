@@ -1,9 +1,10 @@
 // server init + mods
 var app = require('express')();
+const express = require('express');
+const app = express();
+app.use(express.static('public'));
 var http = require('http').Server(app);
 const { default: axios } = require('axios');
-const request = require('request');
-
 
 
 
@@ -11,6 +12,7 @@ const request = require('request');
 app.get('/', function(req, res){
    res.sendFile(__dirname + '/index.html');
 });
+
 
 app.get('/getByZip/:zipcode', (req, res) => {
 
