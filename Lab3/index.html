@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lab 3</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>PERSONAL POKEDEX</h1>
+    <div id="wrapper">
+      <div id="reset"><button id="redo" onclick="reset()">RESET</button></div>
+      <img id=pokedex src="pokedex.png" alt="">
+      <div id="content">
+        <div id="enter">
+          <h2>Enter a Pokemon Name:</h2>
+          <form action=# id="pokeform">
+            <select name="verb" id="verb">
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+              <option value="PUT">PUT</option>
+              <option value="DELETE">DELETE</option>
+            </select>
+            <input type="text" id="user">
+            <br>
+            <img id="pokeball" onclick="output()" src="pokeball.png" alt="">
+          </form>
+        </div>
+      </div>
+      <div id="info">
+        <h2>info about pokemon</h2>
+      </div>
+    </div>
+
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
