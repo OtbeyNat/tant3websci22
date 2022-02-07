@@ -1,5 +1,6 @@
 function getFlavorText(name) {
-  var current = window.location.href;
+  var last = window.location.href.lastIndexOf("/");
+  var current = window.location.href.substring(0,last+1);
   var url = current + "text/" + name.toLowerCase();
 
   $.ajax({
@@ -9,7 +10,7 @@ function getFlavorText(name) {
     success: function(data) {
         console.log(data);
         //alert(data.flavor_text_entries.length);
-        var flavor = data.flavor_text_entries[0].flavor_text.replace('', "  ");
+        var flavor = data.flavor_text_entries[1].flavor_text.replace('', "  ");
         document.getElementById('flavor').innerHTML = flavor;
     },
     error: function(msg) {
@@ -23,7 +24,8 @@ function getFlavorText(name) {
 function getPokeData(name) {
   console.log(name)
 
-  var current = window.location.href;
+  var last = window.location.href.lastIndexOf("/");
+  var current = window.location.href.substring(0,last+1);
   //alert(current);
   
   var url = current + "pokemon/" + name.toLowerCase();
@@ -74,7 +76,7 @@ function getPokeData(name) {
       getFlavorText(name);
       var pokename = document.getElementById('pokename');
       if (pokename.innerHTML == "") {
-        pokename.innerHTML = "POKEMON NOT FOUND IN POKEDEX"
+        pokename.innerHTML = name.toUpperCase() + " NOT FOUND IN POKEDEX"
         document.getElementById('pokepic').setAttribute('src','img/pokeball.png');
         document.getElementById('abilities').innerHTML = "Try Searching Again!";
         document.getElementById('measure').innerHTML = "";
@@ -106,6 +108,7 @@ function getPokeData(name) {
     },250);
     $("#info").fadeIn(500);
     document.getElementById('info').style.display = 'block';
+ 
   };
 
   function reset() {

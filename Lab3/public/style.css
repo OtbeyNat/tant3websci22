@@ -97,10 +97,10 @@ body {font: 14px Helvetica, Arial;
 
 #types li{
     display: inline-block;
-    margin: 8px;
+    margin: 2px;
     padding: 4px;
     border: 1px black solid;
-    width: 250px;
+    width: min-content;
     text-transform: uppercase;
     border-radius: 5%;
 }
@@ -154,15 +154,6 @@ form input[type=text], input[type=select] {
         padding: 0;
         margin: 0;
     }
-    #types li{
-    display: inline-block;
-    margin: 8px;
-    padding: 4px;
-    border: 1px black solid;
-    width: 250px;
-    text-transform: uppercase;
-    border-radius: 5%;
-}
     #user,#verb {
         background-color: rgb(184, 235, 255);
         border: skyblue 1px solid;
@@ -234,7 +225,7 @@ form input[type=text], input[type=select] {
         font-size: 100%;
     }
     #types li {
-        width: 35%;
+        width: 40%;
         border-radius: 10%;
     }
     #types, #abilities ul {
