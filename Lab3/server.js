@@ -18,10 +18,33 @@ app.get('/pokemon/:name', (req,res) => {
   let url = 'https://pokeapi.co/api/v2/pokemon/' + pokemon;
   axios.get(url)
     .then(e => {
-      res.send(e.data)
+      res.send(e.data);
+      console.log(e.status);
     })
     .catch(err => {
-      console.log(err)
+      //console.log(err);
+      if(err.response) {
+        console.log(err.response.data);
+        console.log(err.response.status);
+      }
+    })
+});
+
+app.get('/text/:name', (req,res) => {
+  const pokemon = req.params.name;
+  
+  let url = 'https://pokeapi.co/api/v2/pokemon-species/' + pokemon;
+  axios.get(url)
+    .then(e => {
+      res.send(e.data);
+      console.log(e.status);
+    })
+    .catch(err => {
+      //console.log(err);
+      if(err.response) {
+        console.log(err.response.data);
+        console.log(err.response.status);
+      }
     })
 });
 

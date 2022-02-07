@@ -17,7 +17,6 @@ body {font: 14px Helvetica, Arial;
 }
 
 #pokedex {
-    z-index: 1;
     width: 60%;
     height: 85vh;
     top: 1;
@@ -80,13 +79,19 @@ body {font: 14px Helvetica, Arial;
 }
 
 #pokepic {
-    margin-top: 5%;
-    height: 50%;
+    width: 95%;
+    margin-top: -10%;
+    margin-bottom: -5%;
 }
 
-#types {
+#types, #abilities ul {
     padding: 0;
+    margin: 0;
     list-style: none;
+}
+
+#abilities li {
+    padding-left: 4px;
 }
 
 #types li{
@@ -101,6 +106,31 @@ body {font: 14px Helvetica, Arial;
 
 #pokename {
     text-transform:capitalize;
+}
+
+#pic {
+    float: left;
+    width: 55%;
+    display: block;
+}
+#stats, #stats ul {
+    float: left;
+    width: 43%;
+    display: block;
+    text-align: left;
+}
+
+#pic, #stats {
+    height: 50%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+form input[type="text"] {
+    text-transform: lowercase;
 }
 
 #normal {
@@ -138,6 +168,9 @@ body {font: 14px Helvetica, Arial;
 }
 #bug {
     background-color: rgb(122, 189, 68);
+}
+#rock {
+    background-color: rgb(168, 119, 54);
 }
 #ghost {
     background-color: rgb(100, 50, 116);

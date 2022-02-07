@@ -1,30 +1,32 @@
-/*
-function getWeatherByZip( zip ) {
-    console.log(zip)
+function getFlavorText(name) {
+  var current = window.location.href;
+  var url = current + "text/" + name;
 
-    var url = `http://localhost:3000/getByZip/${zip}`
-
-        $.ajax({
-        type: "GET",
-        url: url,
-        dataType: "json",
-        success: function(data) {
-            console.log(data);
-            $('#messages').append($('<li>').text(`Weather: ${data.main.temp}°F - ${data.weather[0].description}`));
-            $('#messages li').last().css("color", "green");
-        socket.emit('message', `Weather: ${data.main.temp}°F - ${data.weather[0].description}`);
-        },
-        error: function(msg) {
-            // there was a problem
-            alert("There was a problem: " + msg.status + " " + msg.statusText);
-        }
-    });
+  $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "json",
+    success: function(data) {
+        console.log(data);
+        //alert(data.flavor_text_entries.length);
+        var flavor = data.flavor_text_entries[0].flavor_text.replace('', "  ");
+        document.getElementById('flavor').innerHTML = flavor;
+    },
+    error: function(msg) {
+        // there was a problem
+        //alert(msg.status);
     }
-*/
+});
+
+}
+
 function getPokeData(name) {
   console.log(name)
 
-  var url = `http://localhost:3000/pokemon/${name}`;
+  var current = window.location.href;
+  //alert(current);
+  var url = current + "pokemon/" + name;
+  //var url = `http://localhost:3000/pokemon/${name}`;
       $.ajax({
       type: "GET",
       url: url,
@@ -32,6 +34,12 @@ function getPokeData(name) {
       success: function(data) {
           console.log(data);
           document.getElementById('pokename').innerHTML = data.name;
+          document.getElementById('id_num').innerHTML = "id: " + data.id;
+          $('#pokepic').attr('src',data.sprites.front_default);
+          var height = parseFloat(data.height)/10;
+          var weight = parseFloat(data.weight)/10;
+          document.getElementById('measure').innerHTML = "HT: " + height + "m |" +  " WT: " + weight + "kg";
+
           var typediv = document.getElementById('types');
           typediv.innerHTML = "";
           data.types.forEach(element => {
@@ -40,11 +48,17 @@ function getPokeData(name) {
             t.setAttribute("id", element.type.name);
             $('#types').append(t);
           });
-          $('#pokepic').attr('src','https://img.pokemondb.net/artwork/' + data.name + '.jpg');
+          var abilities = document.getElementById('abilities');
+          abilities.innerHTML = "Abilities:";
+          data.abilities.forEach(element => {
+            var t = document.createElement('li');
+            t.textContent = element.ability.name;
+            $('#abilities').append(t);
+          });
       },
       error: function(msg) {
           // there was a problem
-          document.getElementById('pokename').innerHTML = msg.status + ' ' + msg.statusText;
+          //alert(msg.status);
       }
   });
   }
@@ -56,6 +70,16 @@ function getPokeData(name) {
 
     if (verb == 'GET') {
       getPokeData(name);
+      getFlavorText(name);
+      var pokename = document.getElementById('pokename');
+      if (pokename.innerHTML == "") {
+        pokename.innerHTML = "POKEMON NOT FOUND IN POKEDEX"
+        document.getElementById('pokepic').setAttribute('src','img/pokeball.png');
+        document.getElementById('abilities').innerHTML = "Try Searching Again!";
+        document.getElementById('measure').innerHTML = "";
+        document.getElementById('flavor').innerHTML = "";
+        document.getElementById('id_num').innerHTML = "";
+      }
     }
     else {
       var text = document.getElementById('text')
@@ -71,11 +95,10 @@ function getPokeData(name) {
       };
     }
     
-
     $("#enter").fadeOut(500);
     setTimeout(function(){
       document.getElementById('enter').style.display = 'none';
-    },500);
+    },250);
     $("#info").fadeIn(500);
     document.getElementById('info').style.display = 'block';
   };
