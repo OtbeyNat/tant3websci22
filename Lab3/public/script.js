@@ -10,7 +10,12 @@ function getFlavorText(name) {
     success: function(data) {
         console.log(data);
         //alert(data.flavor_text_entries.length);
-        var flavor = data.flavor_text_entries[1].flavor_text.replace('', "  ");
+        var len = data.flavor_text_entries.length;
+        var ran = Math.floor(Math.random() * len);
+        while (data.flavor_text_entries[ran].language.name != "en") {
+          var ran = Math.floor(Math.random() * len);
+        }
+        var flavor = data.flavor_text_entries[ran].flavor_text.replace('', "  ");
         document.getElementById('flavor').innerHTML = flavor;
     },
     error: function(msg) {
@@ -65,7 +70,19 @@ function getPokeData(name) {
       }
   });
   }
-      
+    
+  
+  function clear() {
+    document.getElementById('pokename').innerHTML = "";
+    document.getElementById('types').innerHTML = "";
+    document.getElementById('measure').innerHTML = "";
+    document.getElementById('flavor').innerHTML = "";
+    document.getElementById('id_num').innerHTML = "";
+    document.getElementById('abilities').innerHTML = "";
+    document.getElementById('pokepic').setAttribute('src','');
+
+  }
+
   function output(){
     var name = document.getElementById('user').value;
     var verb = document.getElementById('verb').value;
@@ -74,17 +91,18 @@ function getPokeData(name) {
     if (verb == 'GET') {
       getPokeData(name);
       getFlavorText(name);
-      var pokename = document.getElementById('pokename');
-      if (pokename.innerHTML == "") {
-        pokename.innerHTML = name.toUpperCase() + " NOT FOUND IN POKEDEX"
-        document.getElementById('pokepic').setAttribute('src','img/pokeball.png');
-        document.getElementById('abilities').innerHTML = "Try Searching Again!";
-        document.getElementById('measure').innerHTML = "";
-        document.getElementById('flavor').innerHTML = "";
-        document.getElementById('id_num').innerHTML = "";
-      }
+      setTimeout(function(){
+        var pokename = document.getElementById('pokename');
+        if (pokename.innerHTML == "") {
+          clear();
+          pokename.innerHTML = name.toUpperCase() + " NOT FOUND IN POKEDEX"
+          document.getElementById('pokepic').setAttribute('src','img/pokeball.png');
+          document.getElementById('abilities').innerHTML = "Try Searching Again!";
+        }
+      },1000)
     }
     else {
+      clear();
       var text = document.getElementById('abilities');
       document.getElementById('pokepic').setAttribute('src','img/pokeball.png')
       if (verb == 'POST') {
@@ -96,34 +114,27 @@ function getPokeData(name) {
       if (verb == 'DELETE') {
         text.innerHTML = "DELETE " + name + " IS NOT AVAILABLE YET";
       };
-        document.getElementById('measure').innerHTML = "";
-        document.getElementById('flavor').innerHTML = "";
-        document.getElementById('id_num').innerHTML = "";
 
     }
     
-    $("#enter").fadeOut(500);
+    $("#enter").fadeOut(1000);
     setTimeout(function(){
       document.getElementById('enter').style.display = 'none';
-    },250);
-    $("#info").fadeIn(500);
-    document.getElementById('info').style.display = 'block';
+    },750);
+    setTimeout(function(){
+      $("#info").fadeIn(1000);
+      document.getElementById('info').style.display = 'block';
+    },1000)
  
   };
 
   function reset() {
     document.getElementById('user').value = "";
-    $("#info").fadeOut(500);
+    clear();
+    $("#info").fadeOut(2000);
     setTimeout(function(){
       document.getElementById('info').style.display = 'none';
-    },500);
-    $("#enter").fadeIn(500);
-    document.getElementById('enter').style.display = 'block'; 
-    
-    setTimeout(function(){
-      document.getElementById('pokepic').setAttribute('src','');
-      document.getElementById('pokename').innerHTML = "";
-      document.getElementById('types').innerHTML = "";
-    },500)
-    
+    },2250);
+    $("#enter").fadeIn(1000);
+    document.getElementById('enter').style.display = 'block';    
   };
