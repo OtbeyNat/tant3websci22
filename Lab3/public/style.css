@@ -96,11 +96,11 @@ body {font: 14px Helvetica, Arial;
 
 #types li{
     display: inline-block;
-    margin: 12px;
-    padding: 6px;
+    margin: 8px;
+    padding: 4px;
     border: 1px black solid;
     border-radius: 10%;
-    width: 80px;
+    width: 70px;
     text-transform: uppercase;
 }
 
