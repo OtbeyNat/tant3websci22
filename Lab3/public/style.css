@@ -11,6 +11,7 @@ body {font: 14px Helvetica, Arial;
     text-align: center;
 }
 
+
 #wrapper {
     position: relative;
     width: 100%;
@@ -149,6 +150,28 @@ form input[type=text], input[type=select] {
     #body {
         font-size: 100%;
     }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    #types li{
+    display: inline-block;
+    margin: 8px;
+    padding: 4px;
+    border: 1px black solid;
+    width: 250px;
+    text-transform: uppercase;
+    border-radius: 5%;
+}
+    #user,#verb {
+        background-color: rgb(184, 235, 255);
+        border: skyblue 1px solid;
+        text-align: center;
+    }
+    #pokesubmit {
+        border: none;
+        background-image: url(pokeball.png);
+    }
     #verb {
         font-size:100%;
     }
@@ -156,11 +179,26 @@ form input[type=text], input[type=select] {
         font-size: 100%;
     }
     #reset button {
+        border: red solid 1px;
+        background-color: rgb(218, 218, 218);
+        border-radius: 5%;
+        transition: .5s;
+        width: 10%;
+        left: 45%;
+        top: 3%;
+        position: absolute;
         font-size: 100%;
+    }
+    #reset button:hover{
+        background-color: rgb(253, 208, 208);
+        cursor: pointer;
     }
     #wrapper {
         position: relative;
         width: 100%;
+    }
+    #enter,#pokeform {
+        height: 100%;
     }
 
     #pokedex {
@@ -198,7 +236,15 @@ form input[type=text], input[type=select] {
     #types li {
         width: 35%;
         border-radius: 10%;
-
+    }
+    #types, #abilities ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    
+    #abilities li {
+        padding-left: 4px;
     }
 }
 
