@@ -1,5 +1,4 @@
 // server init + mods
-var app = require('express')();
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
@@ -13,7 +12,20 @@ app.get('/', function(req, res){
    res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/pokemon/:name', (req,res) => {
+  const pokemon = req.params.name;
+  
+  let url = 'https://pokeapi.co/api/v2/pokemon/' + pokemon;
+  axios.get(url)
+    .then(e => {
+      res.send(e.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+});
 
+/*
 app.get('/getByZip/:zipcode', (req, res) => {
 
   const zip_code = req.params.zipcode;
@@ -30,7 +42,7 @@ app.get('/getByZip/:zipcode', (req, res) => {
       console.log(err)
     })
 });
-
+*/
 
 
 // start server

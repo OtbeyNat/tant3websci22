@@ -2,13 +2,13 @@
 <html>
   <head>
     <title>Lab 3</title>
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>PERSONAL POKEDEX</h1>
     <div id="wrapper">
       <div id="reset"><button id="redo" onclick="reset()">RESET</button></div>
-      <img id=pokedex src="/public/img/pokedex.png" alt="">
+      <img id=pokedex src="img/pokedex.png" alt="">
       <div id="content">
         <div id="enter">
           <h2>Enter a Pokemon Name:</h2>
@@ -21,16 +21,21 @@
             </select>
             <input type="text" id="user">
             <br>
-            <img id="pokeball" onclick="output()" src="/public//img/pokeball.png" alt="">
+            <img id="pokeball" onclick="output()" src="img/pokeball.png" alt="">
           </form>
         </div>
       </div>
       <div id="info">
-        <h2>info about pokemon</h2>
+        <h3 id="pokename"></h2>
+        <img id="pokepic" src="">
+        <div id="desc">
+          <ul id="types"><ul>
+        </div>
       </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-  <script src="/public/script.js"></script>
+  <script src="script.js"></script>
   </body>
 </html>
