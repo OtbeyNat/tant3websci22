@@ -82,6 +82,10 @@ function getPokeData(name) {
     document.getElementById('pokepic').setAttribute('src','');
 
   }
+  
+  $('#pokeform').submit(function(){
+    output();
+  });
 
   function output(){
     var name = document.getElementById('user').value;
