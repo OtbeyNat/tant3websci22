@@ -1,6 +1,6 @@
 function getFlavorText(name) {
   var current = window.location.href;
-  var url = current + "text/" + name;
+  var url = current + "text/" + name.toLowerCase();
 
   $.ajax({
     type: "GET",
@@ -25,7 +25,8 @@ function getPokeData(name) {
 
   var current = window.location.href;
   //alert(current);
-  var url = current + "pokemon/" + name;
+  
+  var url = current + "pokemon/" + name.toLowerCase();
   //var url = `http://localhost:3000/pokemon/${name}`;
       $.ajax({
       type: "GET",

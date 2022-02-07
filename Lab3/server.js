@@ -40,7 +40,7 @@ app.get('/text/:name', (req,res) => {
       console.log(e.status);
     })
     .catch(err => {
-      //console.log(err);
+      console.log(err);
       if(err.response) {
         console.log(err.response.data);
         console.log(err.response.status);

@@ -1,6 +1,6 @@
 body {font: 14px Helvetica, Arial; 
-    height:100vh; 
     width:100vw; 
+    height:100vh;
     resize: both; 
     background-image: url(img/grassbackground.png); 
     background-position: center; 
@@ -17,10 +17,8 @@ body {font: 14px Helvetica, Arial;
 }
 
 #pokedex {
-    width: 60%;
-    height: 85vh;
+    height: 80vh;
     top: 1;
-    
 }
 
 #content,#info {
@@ -31,6 +29,7 @@ body {font: 14px Helvetica, Arial;
     left: 22.5%;
     height: 55%;
     word-wrap: break-word;
+    font-size: 3.2em;
 }
 #info {
     display:none;
@@ -42,8 +41,8 @@ body {font: 14px Helvetica, Arial;
 }
 
 #pokeball {
-    width: 25%;
-    top: 80%;
+    width: 35%;
+    top: 50%;
     position: relative;
     transition: 0.5s;
 }
@@ -61,6 +60,7 @@ body {font: 14px Helvetica, Arial;
     left: 45%;
     top: 3%;
     position: absolute;
+    font-size: 2em;
 }
 
 #reset button:hover{
@@ -99,9 +99,13 @@ body {font: 14px Helvetica, Arial;
     margin: 8px;
     padding: 4px;
     border: 1px black solid;
-    border-radius: 10%;
-    width: 70px;
+    width: 250px;
     text-transform: uppercase;
+    border-radius: 5%;
+}
+
+#verb {
+    font-size:.81em;
 }
 
 #pokename {
@@ -110,18 +114,22 @@ body {font: 14px Helvetica, Arial;
 
 #pic {
     float: left;
-    width: 55%;
+    width: 50%;
     display: block;
+    text-align: center;
+    left: 10%;
 }
 #stats, #stats ul {
     float: left;
     width: 43%;
     display: block;
     text-align: left;
+    font-size: .6em;
+    margin-left: 5%;
 }
 
 #pic, #stats {
-    height: 50%;
+    height: 70%;
 }
 
 ul {
@@ -129,8 +137,63 @@ ul {
     margin: 0;
 }
 
-form input[type="text"] {
-    text-transform: lowercase;
+form input[type=text], input[type=select] {
+    font-size: .8em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center
+}
+
+@media only screen and (min-width: 1000px) {
+    #body {
+        font-size: 100%;
+    }
+    #reset button {
+        font-size: 100%;
+    }
+    #wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    #pokedex {
+        top: 1;
+        height: 90vh;
+        width: 40%;
+    }
+    #pokeball {
+        width: 22%;
+        transition: .5s;
+        top: 50%;
+    }
+    #pokeball:hover {
+        width: 25%;
+        cursor: pointer;
+    }
+    #content,#info {
+        position: absolute;
+        width: 32%;
+        left: 34%;   
+        font-size: 100%; 
+    }
+    #info {
+        display: none;
+    }
+    #enter,#pokeform {
+        height: 100%;
+    }
+    #pic, #stats {
+        height: 60%;
+    }
+    #stats, #stats ul {
+        font-size: 100%;
+    }
+    #types li {
+        width: 35%;
+        border-radius: 10%;
+
+    }
 }
 
 #normal {
@@ -186,30 +249,4 @@ form input[type="text"] {
 }
 #fairy {
     background-color: pink;
-}
-
-@media only screen and (min-width: 1000px) {
-    #pokedex {
-        width: 35%;
-    }
-    #pokeball {
-        width: 22%;
-        transition: .5s;
-        top: 50%;
-    }
-    #pokeball:hover {
-        width: 25%;
-        cursor: pointer;
-    }
-    #content,#info {
-        position: absolute;
-        width: 32%;
-        left: 34%;    
-    }
-    #info {
-        display: none;
-    }
-    #enter,#pokeform {
-        height: 100%;
-    }
 }
