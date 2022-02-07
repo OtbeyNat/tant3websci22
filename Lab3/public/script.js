@@ -83,8 +83,8 @@ function getPokeData(name) {
       }
     }
     else {
-      var text = document.getElementById('text')
-      document.getElementById('pokepic').setAttribute('src','img/pikachu.png')
+      var text = document.getElementById('abilities');
+      document.getElementById('pokepic').setAttribute('src','img/pokeball.png')
       if (verb == 'POST') {
         text.innerHTML = "POST " + name + " IS NOT AVAILABLE YET";
       };
@@ -94,6 +94,10 @@ function getPokeData(name) {
       if (verb == 'DELETE') {
         text.innerHTML = "DELETE " + name + " IS NOT AVAILABLE YET";
       };
+        document.getElementById('measure').innerHTML = "";
+        document.getElementById('flavor').innerHTML = "";
+        document.getElementById('id_num').innerHTML = "";
+
     }
     
     $("#enter").fadeOut(500);

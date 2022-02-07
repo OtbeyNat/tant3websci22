@@ -149,6 +149,12 @@ form input[type=text], input[type=select] {
     #body {
         font-size: 100%;
     }
+    #verb {
+        font-size:100%;
+    }
+    form input[type=text], input[type=select] {
+        font-size: 100%;
+    }
     #reset button {
         font-size: 100%;
     }
