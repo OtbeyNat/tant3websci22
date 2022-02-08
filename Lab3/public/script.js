@@ -156,7 +156,7 @@ function getPokeData(name) {
   function front() {
     $("#pokepic").fadeOut(500);
     setTimeout(function(){
-      document.getElementById('#pokepic').style.display = 'none';
+      document.getElementById('pokepic').style.display = 'none';
     },500);
     $("#back").fadeIn(1000);
     document.getElementById('back').style.display = 'block'; 
@@ -165,7 +165,7 @@ function getPokeData(name) {
   function back() {
     $("#back").fadeOut(500);
     setTimeout(function(){
-      document.getElementById('#back').style.display = 'none';
+      document.getElementById('back').style.display = 'none';
     },500);
     $("#pokepic").fadeIn(1000);
     setTimeout(function(){

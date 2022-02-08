@@ -246,7 +246,6 @@ form input[type=text], input[type=select] {
     }
     #stats, #stats ul, #pre {
         font-size: 100%;
-        width: 50%;
     }
     #pre {
         margin-bottom: -5%;
