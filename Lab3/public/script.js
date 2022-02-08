@@ -17,6 +17,12 @@ function getFlavorText(name) {
         }
         var flavor = data.flavor_text_entries[ran].flavor_text.replace('', "  ");
         document.getElementById('flavor').innerHTML = flavor;
+        if (data.evolves_from_species) {
+          var evol = "evolves from: "+data.evolves_from_species.name;
+          document.getElementById('pre').innerHTML = evol;
+        }
+        document.getElementById('gen').innerHTML = data.generation.name;
+
     },
     error: function(msg) {
         // there was a problem
@@ -44,6 +50,7 @@ function getPokeData(name) {
           document.getElementById('pokename').innerHTML = data.name;
           document.getElementById('id_num').innerHTML = "id: " + data.id;
           $('#pokepic').attr('src',data.sprites.front_default);
+          $('#back').attr('src',data.sprites.back_default);
           var height = parseFloat(data.height)/10;
           var weight = parseFloat(data.weight)/10;
           document.getElementById('measure').innerHTML = "HT: " + height + "m |" +  " WT: " + weight + "kg";
@@ -74,15 +81,18 @@ function getPokeData(name) {
   
   function clear() {
     document.getElementById('pokename').innerHTML = "";
+    document.getElementById('pre').innerHTML = "";
+    document.getElementById('gen').innerHTML = "";
     document.getElementById('types').innerHTML = "";
     document.getElementById('measure').innerHTML = "";
     document.getElementById('flavor').innerHTML = "";
     document.getElementById('id_num').innerHTML = "";
     document.getElementById('abilities').innerHTML = "";
     document.getElementById('pokepic').setAttribute('src','');
+    document.getElementById('back').setAttribute('src','');
 
   }
-  
+
   $('#pokeform').submit(function(){
     output();
   });
@@ -135,10 +145,31 @@ function getPokeData(name) {
   function reset() {
     document.getElementById('user').value = "";
     clear();
-    $("#info").fadeOut(2000);
+    $("#info").fadeOut(1500);
     setTimeout(function(){
       document.getElementById('info').style.display = 'none';
     },2250);
-    $("#enter").fadeIn(1000);
+    $("#enter").fadeIn(500);
     document.getElementById('enter').style.display = 'block';    
+  };
+
+  function front() {
+    $("#pokepic").fadeOut(500);
+    setTimeout(function(){
+      document.getElementById('#pokepic').style.display = 'none';
+    },500);
+    $("#back").fadeIn(1000);
+    document.getElementById('back').style.display = 'block'; 
+  };
+
+  function back() {
+    $("#back").fadeOut(500);
+    setTimeout(function(){
+      document.getElementById('#back').style.display = 'none';
+    },500);
+    $("#pokepic").fadeIn(1000);
+    setTimeout(function(){
+      document.getElementById('pokepic').style.display = 'block'; 
+    },500);
+    
   };

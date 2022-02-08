@@ -79,10 +79,28 @@ body {font: 14px Helvetica, Arial;
     text-align: center;
 }
 
-#pokepic {
+#pokepic, #back {
     width: 95%;
     margin-top: -10%;
-    margin-bottom: -5%;
+    margin-bottom: -10%;
+    position:absolute;
+    left: 0%;
+    border-radius: 25%;
+}
+
+#pokepic:hover, #back:hover {
+    cursor: pointer;
+}
+
+#under {
+    height: 100%;
+}
+#pre,#types {
+    margin-top: 90%;
+}
+
+#back {
+    display: none;
 }
 
 #types, #abilities ul {
@@ -118,15 +136,20 @@ body {font: 14px Helvetica, Arial;
     width: 50%;
     display: block;
     text-align: center;
-    left: 10%;
+    position: relative;
 }
 #stats, #stats ul {
     float: left;
-    width: 43%;
+    width: 45%;
     display: block;
     text-align: left;
     font-size: .6em;
     margin-left: 5%;
+}
+
+#pre {
+    width: 100%;
+    font-size: .6em;
 }
 
 #pic, #stats {
@@ -221,8 +244,12 @@ form input[type=text], input[type=select] {
     #pic, #stats {
         height: 60%;
     }
-    #stats, #stats ul {
+    #stats, #stats ul, #pre {
         font-size: 100%;
+        width: 50%;
+    }
+    #pre {
+        margin-bottom: -5%;
     }
     #types li {
         width: 40%;
@@ -232,6 +259,9 @@ form input[type=text], input[type=select] {
         padding: 0;
         margin: 0;
         list-style: none;
+    }
+    #flavor {
+        font-size: 80%;
     }
     
     #abilities li {
