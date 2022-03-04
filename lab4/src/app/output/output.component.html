@@ -1,0 +1,20 @@
+<h3 id="pokename">{{pokedata.name}}</h3>
+<div id="info">
+    <div id="pic">
+        <img id="pokepic" src="{{pokedata.sprites.front_default}}">
+    </div>
+    <div id="under">
+        <ul id="types">
+        <div *ngFor="let x of pokedata.types"><li id="{{x.type.name}}">{{x.type.name}}</li></div>
+        </ul>
+    </div>
+    <div id="stats">
+        <p id="id_num">id: {{pokedata.id}}</p>
+        <p id="gen">{{flavor.generation.name}}</p>
+        <p id="measure">HT: {{pokedata.height/10}} m<br> WT: {{pokedata.weight/10}} kg</p>
+        <div id="abilities"><p>Abilities:</p>
+            <li *ngFor="let y of pokedata.abilities">{{y.ability.name}}</li>
+        </div>
+    </div>
+    <p id="flavor">{{flavor.flavor_text_entries[0].flavor_text.replace('', "  ")}}</p>
+</div>
