@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,body {
+    font: 14px Helvetica, Arial; 
+    width:100vw; 
+    height:100vh;
+    resize: both; 
+    background-image: url('./assets/grassbackground.png'); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    overflow: hidden;
+    text-align: center;
+    
+}

@@ -1,0 +1,45 @@
+:host {font: 14px Helvetica, Arial; 
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#pokedex {
+    top: 1;
+    height: 90vh;
+    width: 40%;
+}
+
+#reset button{
+    border: red solid 1px;
+    background-color: rgb(218, 218, 218);
+    border-radius: 5%;
+    transition: .5s;
+    width: 10%;
+    left: 45%;
+    top: 3%;
+    position: absolute;
+}
+
+#reset button:hover{
+    background-color: rgb(253, 208, 208);
+    cursor: pointer;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+#input,#output{
+    position: absolute;
+    top: 20vh;
+    width: 32%;
+    left: 34%;
+    height: 40%;
+    word-wrap: break-word;
+    z-index: 1;
+}
