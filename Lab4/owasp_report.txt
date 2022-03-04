@@ -1,0 +1,32 @@
+==== 1 ==========
+GET http://localhost:3000 HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Fri, 04 Mar 2022 14:59:12 GMT
+ETag: W/"395-17f55712556"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 917
+Date: Fri, 04 Mar 2022 15:26:48 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Lab4</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>html,body{font:14px Helvetica,Arial;width:100vw;height:100vh;resize:both;background-image:url(grassbackground.924699f106cac1ce.png);background-position:center;background-repeat:no-repeat;background-size:cover;overflow:hidden;text-align:center}</style><link rel="stylesheet" href="styles.a9fda796ab720dba.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.a9fda796ab720dba.css"></noscript></head>
+<body>
+  <app-root></app-root>
+<script src="runtime.531c75894ce34968.js" type="module"></script><script src="polyfills.a42588e795094b54.js" type="module"></script><script src="main.78820fa5f3aba660.js" type="module"></script>
+
+</body></html>
