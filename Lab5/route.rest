@@ -1,0 +1,30 @@
+GET http://localhost:3000/db
+###
+GET http://localhost:3000/db/0
+###
+POST http://localhost:3000/db/1
+###
+POST http://localhost:3000/db
+Content-Type: application/json
+
+{
+    "name": "pikachu"
+}
+###
+PUT http://localhost:3000/db
+Content-Type: application/json
+
+{
+    "name": "tohb"
+}
+###
+PUT http://localhost:3000/db/1
+Content-Type: application/json
+
+{
+    "name": "ditto"
+}
+###
+DELETE http://localhost:3000/db/1
+###
+DELETE http://localhost:3000/db
