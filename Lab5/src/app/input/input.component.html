@@ -1,0 +1,15 @@
+<div id="content" #input>
+    <div id="enter">
+      <h2>Enter Pokemon Name or ID:</h2>
+        <select name="verb" id="verb" #method>
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="DELETE">DELETE</option>
+        </select>
+        <input type="text" autocomplete="off" id="user" maxlength="14" #name>
+        <br>
+    </div>
+    <div id="pokeball"><img id="ball" (click)="output(name.value,method.value)" src="../assets/pokeball.png" alt="">
+    </div>
+  </div>
