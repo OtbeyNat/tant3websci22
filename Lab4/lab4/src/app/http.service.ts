@@ -29,4 +29,8 @@ export class HttpService {
   public sendDeleteRequest(url: string) {
     return this.httpClient.delete(url);
   }
+
+  public MongoConnect(url: string) {
+    return this.httpClient.get(url);
+  }
 }

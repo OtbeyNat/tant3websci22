@@ -28,7 +28,12 @@ export class AppComponent {
         console.log(this.flavor);
       })
     })
+  }
 
+  mongo() {
+    this.HttpService.MongoConnect("../mongo").subscribe((data:any) => {
+      console.log("what");
+    })
   }
 
   constructor(private HttpService: HttpService) {}

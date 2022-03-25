@@ -1,7 +1,4 @@
-:host {font: 14px Helvetica, Arial; 
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
+:host {font: 14px Helvetica, Arial;}
 
 #wrapper {
     position: relative;

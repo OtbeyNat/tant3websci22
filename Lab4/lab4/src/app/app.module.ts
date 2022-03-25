@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
 import { OutputComponent } from './output/output.component';
+import { MongoComponent } from './mongo/mongo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OutputComponent,
-    InputComponent
+    InputComponent,
+    MongoComponent
   ],
   imports: [
     BrowserModule,
