@@ -172,13 +172,14 @@ app.get('/card/:id', function(req, res) {
 app.post('/card',jsonParser, function(req, res) {
     //DOCUMENT TO ADD WITH DATA IN THE BODY OF POST REQUEST
     var obj = req.body;
+    obj["id"] = parseInt(obj["id"]);
     delete obj['method'];
     if (obj["id"] == null) {obj["id"] = -1;}
     if (obj["name"] == null) {obj["id"] = "unknown";}
     if (obj["atk"] == null) {obj["atk"] = -1;}
     if (obj["def"] == null) {obj["def"] = -1;}
     if (obj["archetype"] == null) {obj["archetype"] = "unknown";}
-    if (obj["url"] == null) {obj["url"] = "https://upload.wikimedia.org/wikipedia/commons/3/33/White_square_with_question_mark.png";}
+    if (obj["url"] == null || obj["url"] == "") {obj["url"] = "https://upload.wikimedia.org/wikipedia/commons/3/33/White_square_with_question_mark.png";}
     console.log(obj);
 
 
