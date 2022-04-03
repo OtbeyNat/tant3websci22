@@ -1,0 +1,32 @@
+==== 1 ==========
+GET http://localhost:3000 HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Fri, 01 Apr 2022 11:01:10 GMT
+ETag: W/"227-17fe4c947c0"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 551
+Date: Fri, 01 Apr 2022 11:15:09 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Deck</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.ef46db3751d8e999.css"></head>
+<body>
+  <app-root></app-root>
+<script src="runtime.db6bc888f5bcf04f.js" type="module"></script><script src="polyfills.9ef9f3851562e52f.js" type="module"></script><script src="main.db0f7aa4580718c3.js" type="module"></script>
+
+</body></html>
