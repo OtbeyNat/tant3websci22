@@ -1,0 +1,33 @@
+==== 1 ==========
+GET http://localhost:3000 HTTP/1.1
+Host: localhost:3000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:92.0) Gecko/20100101 Firefox/92.0
+Pragma: no-cache
+Cache-Control: no-cache
+
+
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 03 Apr 2022 20:28:15 GMT
+ETag: W/"1f4-17ff11d2dc1"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 500
+Date: Sun, 03 Apr 2022 20:33:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>D3</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <app-root></app-root>
+<script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
+</html>
