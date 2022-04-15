@@ -1,0 +1,44 @@
+<div id="form">
+    <select name="verb" id="verb" #method>
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+        <option value="PUT">PUT</option>
+        <option value="DELETE">DELETE</option>
+    </select>
+    
+    <div id="inputs">
+        <select name="verb" id="verb" #game>
+            <option value="hearthstone">HEARTHSTONE</option>
+            <option value="magicthegathering">MAGICTG</option>
+            <option value="pokemon">POKEMON</option>
+            <option value="yugioh">YUGIOH</option>
+        </select>
+        <br>
+        <input type="text" autocomplete="off" id="name" maxlength="24" placeholder="NAME" #name>
+        <br>
+        <input type="text" id="type" placeholder="ARCHETYPE" #type>
+        <br>
+        <input type="number" id="card_atk" min="0" placeholder="ATK" #atk>
+        <br>
+        <input type="number" id="card_def" min="0" placeholder="DEF" #def>
+        <br>
+        <input type="number" id="card_id" min="-1" placeholder="CARD_ID" #id>
+        <br>
+        <input type="url" id="img_url" placeholder="IMAGE URL" #url>
+    </div>
+    <img id="pyramid" (click)="onclick(method.value, game.value, name.value, type.value, id.value, atk.value, def.value,url.value,field.value)"
+    src="https://www.seekpng.com/png/full/71-713236_puzzle-render-by-alanmac-on-deviantart-yugioh-millenium.png" alt="">
+    <div>
+        <h3>Search By:</h3>
+        <select name="verb" id="verb" #field>
+        <option value="name">NAME</option>
+        <option value="card_id">CARD_ID</option>
+        </select>
+    <h4>Contents:</h4>
+    <select name="list" id="list">
+        <option *ngFor="let x of cardlist;"
+        value="">{{x.name}} | {{x.id}} | {{x.game}} </option>
+    </select>
+    </div>
+    
+</div>

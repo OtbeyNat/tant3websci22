@@ -1,0 +1,11 @@
+#inputs input, select{
+    max-width: 45%;
+}
+
+#pyramid {
+    margin-top: 5%;
+    max-width: 50%;
+}
+#pyramid:hover {
+    cursor: pointer;
+}
