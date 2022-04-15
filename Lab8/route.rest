@@ -1,0 +1,30 @@
+GET http://localhost:3000/card
+###
+GET http://localhost:3000/card/id/4084
+###
+GET http://localhost:3000/card/name/Tobey
+###
+GET http://localhost:3000/card/name/Tohb
+###
+POST http://localhost:3000/card
+Content-Type: application/json
+
+{
+    "game": "test",
+    "id": 4084, 
+    "name": "Tobey", 
+    "atk": 999, 
+    "def": 1999, 
+    "archetype": "Student"
+}
+###
+PUT http://localhost:3000/card/4084
+Content-Type: application/json
+
+{
+    "game": "new",
+    "name": "Tohb",  
+    "archetype": "Special One"
+}
+###
+DELETE  http://localhost:3000/card/4084
